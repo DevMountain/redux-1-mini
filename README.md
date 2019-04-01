@@ -30,7 +30,7 @@ In this step, we'll install some new dependencies, create a reducer, and create 
 * Install `redux`
 * Open `./src/store.js`
 * Import `createStore` from Redux.
-* Create an initial state with a current value prop for our counter.
+* Create an initial state with a `currentValue` property for our counter.
 * Write a simple reducer.
 * Create and export a Redux store.
 
@@ -66,8 +66,8 @@ In this step, we'll give our `Counter` component access to the store.
 * Open `./src/Counter.js`.
 * Import `store` from `./src/store.js`.
 * Setup state for `Counter`.
-  * State should have a prop called `store`.
-    * Use the `getState` method to copy the Redux state to the `store` prop.
+  * State should have a property called `store`.
+    * Use the `getState` method to copy the Redux state to the `store` property.
 * Destructure `currentValue` from state in your `render` method.
 * Update the `h1` to use the `currentValue`.
 * Update the `JSON.stringify` method to display the `store` property on state.
