@@ -192,9 +192,8 @@ class Counter extends Component {
     this.state = {
       store: store.getState()
     };
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
   }
+  
   componentDidMount() {
     store.subscribe(() => {
       this.setState({
@@ -365,10 +364,6 @@ class Counter extends Component {
     this.state = {
       store: store.getState()
     };
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
-    this.undo = this.undo.bind(this);
-    this.redo = this.redo.bind(this);
   }
   componentDidMount() {
     store.subscribe(() => {
@@ -453,7 +448,7 @@ If you see a problem or a typo, please fork, make the necessary changes, and cre
 
 ## Copyright
 
-© DevMountain LLC, 2017. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
+© DevMountain LLC, 2019. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
 
 <p align="center">
 <img src="https://s3.amazonaws.com/devmountain/readme-logo.png" width="250">
