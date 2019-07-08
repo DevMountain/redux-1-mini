@@ -274,8 +274,20 @@ In this step, we'll implement undo/redo logic into our reducer.
 
 * Open `./src/store.js`.
 * Create and export `UNDO` and `REDO` action types.
-* Refactor `initialState` and `counter` to handle undo/redo logic.
-
+* Refactor `initialState` to keep track of futureValues and previousValues.
+  * initialState should have two more properties; futureValues and previousValues. Both should be an empty array.
+* Update the existing INCREMENT and DECREMENT cases to return an object that has futureValues and previousValues.
+  * Both should set futureValues to an empty array
+  * Both should add to the new previousValues array by taking the currentValue of the state object passed in and adding to the beginning of a new array. Then, destructure the previousValues array from that same state object and place the destructured array at the end of the new previousValues array.
+* Add a case for UNDO
+  * The currentValue should be set to the first value in the passed in state's previousValue array
+  * futureValues should add the current value of passed in state at the beginning of the array and copy over any existing values
+  * previous values should be set to a copy of the previousValues array passed in on state minus the first index
+* Add a case for REDO
+  * the currentValue should be set to the first value in the passed in state's futureValues array
+  * futureValues should be set to a copy of the futureValues array passed in on state minus the first index
+  * previousValues should add the current value of passed in state at the beginning of the array and copy over any existing value
+  
 ### Solution
 
 <details>
